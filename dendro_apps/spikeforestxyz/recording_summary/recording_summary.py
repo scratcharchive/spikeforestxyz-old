@@ -18,8 +18,9 @@ class RecordingSummaryProcessor(ProcessorBase):
     def run(context: RecordingSummaryContext):
         from .create_recording_summary import create_recording_summary
 
+        output_fname = 'output.nwb.lindi.json'
+        context.input.download(output_fname)
         create_recording_summary(
-            input=context.input.get_url(),
-            output='output.json'
+            output_fname
         )
-        context.output.upload('output.json')
+        context.output.upload(output_fname)

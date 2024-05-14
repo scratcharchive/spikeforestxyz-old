@@ -11,7 +11,7 @@ def create_recording_summaries():
     for name in all_recording_names:
         print('=====================')
         print(name)
-        output_fname = f'recording_summaries/{name}.json'
+        output_fname = f'recording_summaries/{name}.nwb.lindi.json'
         ff = project.get_file(output_fname)
         if ff is not None:
             print("Skipping - already exists")
