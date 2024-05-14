@@ -1,0 +1,36 @@
+{
+    "name": "spikeforestxyz",
+    "description": "Processors for SpikeForestXYZ",
+    "appImage": "ghcr.io/magland/spikeforestxyz:latest",
+    "appExecutable": "/app/main.py",
+    "executable": "/app/main.py",
+    "processors": [
+        {
+            "name": "spikeforestxyz.recording_summary",
+            "description": "Create recording summary for a recording .nwb.lindi.json file",
+            "label": "spikeforestxyz.recording_summary",
+            "inputs": [
+                {
+                    "name": "input",
+                    "description": "Input .nwb.lindi.json file"
+                }
+            ],
+            "inputFolders": [],
+            "outputs": [
+                {
+                    "name": "output",
+                    "description": "Output .json file"
+                }
+            ],
+            "outputFolders": [],
+            "parameters": [],
+            "attributes": [
+                {
+                    "name": "wip",
+                    "value": true
+                }
+            ],
+            "tags": []
+        }
+    ]
+}
