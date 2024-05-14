@@ -36,8 +36,9 @@ def dandi_import():
                 local_cache=lindi.LocalCache()
             )
             with tempfile.TemporaryDirectory() as tmpdir:
+                lindi_fname = f'{tmpdir}/tmp.nwb.lindi.json'
                 f.write_lindi_file(
-                    f'{tmpdir}/tmp.nwb.lindi.json',
+                    lindi_fname,
                     generation_metadata={
                         'generated_by': 'spikeforestxyz',
                         'dandiset_id': dandiset_id,
@@ -46,10 +47,14 @@ def dandi_import():
                         'dandi_asset_url': dandi_asset_url
                     }
                 )
+                lindi_file_url = dc.upload_file_blob(
+                    project_id=dendro_project_id,
+                    file_name=lindi_fname
+                )
             dc.set_file(
                 project=project,
                 file_name=output_path,
-                url=dandi_asset_url,
+                url=lindi_file_url,
                 metadata={
                     'dandisetId': dandiset_id,
                     'dandisetVersion': dandiset_version,

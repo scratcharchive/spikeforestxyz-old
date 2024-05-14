@@ -12,6 +12,9 @@ RUN pip install spikeinterface==0.100.6
 # Install lindi
 RUN pip install lindi==0.3.4
 
+# Install sortingview
+RUN pip install sortingview==0.13.3
+
 # Copy files into the container
 RUN mkdir /app
 COPY *.py /app/
