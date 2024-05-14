@@ -26,8 +26,6 @@ def create_recording_summary(
         },
         'figurls': []
     }
-    if not os.path.exists(os.path.dirname(output)):
-        os.makedirs(os.path.dirname(output))
     with open(output, 'w') as f:
         json.dump(x, f, indent=4)
 
