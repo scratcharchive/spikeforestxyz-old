@@ -6,6 +6,9 @@ RUN pip install dendro==0.2.15
 # Install kachery-cloud
 RUN pip install kachery-cloud==0.4.9
 
+# Install spikeinterface
+RUN pip install spikeinterface==0.100.6
+
 # Install lindi
 RUN pip install lindi==0.3.4
 
