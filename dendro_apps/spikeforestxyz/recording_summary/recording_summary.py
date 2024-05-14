@@ -16,7 +16,7 @@ class RecordingSummaryProcessor(ProcessorBase):
 
     @staticmethod
     def run(context: RecordingSummaryContext):
-        from create_recording_summary import create_recording_summary
+        from .create_recording_summary import create_recording_summary
 
         create_recording_summary(
             input=context.input.get_url(),
